@@ -8,6 +8,10 @@
   <%= @article.body %>
 </p>
 
+<p>
+  Categories: <%= @article.category_names %>
+</p>
+
 <h4>Add a Comment</h4>
 
 <form action="/articles/<%= @article.id %>/comments" method="post">

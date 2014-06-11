@@ -6,4 +6,14 @@ class Article < ActiveRecord::Base
   validates :title, presence: true
   validates :body, presence: true
   validates :author, presence: true
+
+  def category_names
+    names = []
+
+    categories.each do |category|
+      names << category.name
+    end
+
+    names.join(', ')
+  end
 end

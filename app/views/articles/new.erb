@@ -1,0 +1,22 @@
+<h4>Add an Article</h4>
+
+<form action="/articles" method="post">
+  <div>
+    <label>Author</label>
+    <input name="author" value="<%= params[:author] %>">
+  </div>
+
+  <div>
+    <label>Title</label>
+    <input name="title" value="<%= params[:title] %>">
+  </div>
+
+  <div>
+    <label>Body</label>
+    <input name="body" value="<%= params[:body] %>">
+  </div>
+
+  <div>
+    <input type="submit" value="Submit">
+  </div>
+</form>

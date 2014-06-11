@@ -15,7 +15,26 @@ get '/articles' do
 end
 
 get '/articles/new' do
+  @categories = Category.all
   erb :'articles/new'
+end
+
+post '/articles' do
+  @article = Article.new(author: params[:author],
+    title: params[:title], body: params[:body])
+
+  if @article.save
+    params[:category].each do |category_id|
+      category = Category.find(category_id)
+      Categorization.create(article: @article,
+        category: category)
+    end
+
+    redirect '/articles'
+  else
+    flash.now[:notice] = "Uh oh! Your blog post could not be saved."
+    erb :'articles/new'
+  end
 end
 
 get '/articles/:id' do

@@ -20,8 +20,8 @@ get '/articles/new' do
 end
 
 post '/articles' do
-  @article = Article.new(author: params[:author],
-    title: params[:title], body: params[:body])
+  @article = Article.new(author: params[:article][:author],
+    title: params[:article][:title], body: params[:article][:body])
 
   if @article.save
     params[:category].each do |category_id|

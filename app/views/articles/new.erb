@@ -3,17 +3,17 @@
 <form action="/articles" method="post">
   <div>
     <label>Author</label>
-    <input name="author" value="<%= params[:author] %>">
+    <input name="article[author]" value="<%= params[:author] %>">
   </div>
 
   <div>
     <label>Title</label>
-    <input name="title" value="<%= params[:title] %>">
+    <input name="article[title]" value="<%= params[:title] %>">
   </div>
 
   <div>
     <label>Body</label>
-    <input name="body" value="<%= params[:body] %>">
+    <input name="article[body]" value="<%= params[:body] %>">
   </div>
 
   <div>

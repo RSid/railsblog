@@ -9,6 +9,6 @@ Dir['app/**/*.rb'].each { |file| require_relative file }
 set :views, 'app/views'
 
 get '/articles' do
-  @articles = Article.all
+  @articles = Article.order('created_at DESC')
   erb :'articles/index'
 end

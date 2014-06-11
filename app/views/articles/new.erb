@@ -17,6 +17,12 @@
   </div>
 
   <div>
+    <% @categories.each do |category| %>
+      <input type="checkbox" name="category[]" value="<%= category.id %>"><%= category.name %><br>
+    <% end %>
+  </div>
+
+  <div>
     <input type="submit" value="Submit">
   </div>
 </form>

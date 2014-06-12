@@ -42,7 +42,7 @@ get '/articles/:id' do
   erb :'articles/show'
 end
 
-post '/articles/:id/comments' do
+post '/articles/:article_id/comments' do
   @article = Article.find(params[:id])
   @comment = Comment.new(body: params[:body],
     author: params[:author], article: @article)

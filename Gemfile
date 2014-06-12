@@ -9,7 +9,6 @@ gem 'sinatra-flash'
 
 group :test, :development do
   gem 'capybara'
-  gem 'dotenv'
   gem 'pry'
   gem 'rspec'
 end
